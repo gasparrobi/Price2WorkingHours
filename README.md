@@ -4,7 +4,7 @@ See displayed product prices in working hours - chrome extension - https://chrom
 
 ### Supported sites
 
-*arukereso.hu
-*istyle.hu
-*edigital.hu
-*alza.hu
+* arukereso.hu
+* istyle.hu
+* edigital.hu
+* alza.hu
