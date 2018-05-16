@@ -1,0 +1,31 @@
+{
+  "manifest_version": 2,
+  "name": "Price2WorkingHours",
+  "description": "See prices in working hours - Hungarian Forint only",
+  "version": "0.2",
+  "icons": {
+    "16": "icon16.png",
+    "48": "icon48.png",
+    "128": "icon128.png"
+  },
+  "browser_action": {
+    "default_icon": "icon48.png",
+    "default_title": "price2hours",
+    "default_popup": "popup.html"
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "https://*.arukereso.hu/*",
+        "http://*.arukereso.hu/*",
+        "https://*.alza.hu/*",
+        "http://*.alza.hu/*",
+        "https://*.edigital.hu/*",
+        "http://*.edigital.hu/*"
+      ],
+      "js": ["content.js"],
+      "run_at": "document_idle"
+    }
+  ],
+  "permissions": ["activeTab", "storage"]
+}
