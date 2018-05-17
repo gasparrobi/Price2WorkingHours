@@ -1,21 +1,30 @@
 let hourly = 0;
 let hrString = "hr";
 
+const sites = {
+  "arukereso.hu": manipulateArukereso,
+  "alza.hu": manipulateAlza,
+  "edigital.hu": manipulateEdigitalHu
+};
+
+// get user data,
+// calculate hourly rate
+// check if current site is supported
 chrome.storage.local.get(
   ["monthlyNetWage", "extensionActive", "workingHours"],
   async result => {
     if (result.monthlyNetWage > 0 && result.extensionActive === "true") {
-      hourly = await parseInt(result.monthlyNetWage / (result.workingHours * 4));
+      hourly = await parseInt(
+        result.monthlyNetWage / (result.workingHours * 4)
+      );
       window.onload = function() {
-        let href = window.location.href;
+        let url = window.location.href;
 
-        if (href.indexOf("arukereso") > -1) {
-          delayedRun(manipulateArukereso, 1000);
-        } else if (href.indexOf("alza.hu") > -1) {
-          delayedRun(manipulateAlza, 1000);
-        } else if (href.indexOf("edigital.hu") > -1) {
-          delayedRun(manipulateEdigitalHu, 2000);
-        }
+        Object.keys(sites).forEach(key => {
+          if (url.indexOf(key) > -1) {
+            delayedRun(sites[key], 2000);
+          }
+        });
       };
     }
   }
@@ -122,6 +131,7 @@ function manipulateEdigitalHu() {
 
 // HELPER FUNCTIONS
 
+// function for common price display usage, eg: '10000 Ft'
 function changeNormalPrice(item) {
   let price = parseInt(
     item.innerText
@@ -135,6 +145,7 @@ function changeNormalPrice(item) {
   item.innerText = `${hour} ${hrString}`;
 }
 
+// just a setTimeout wrapper
 function delayedRun(fn, delay) {
   setTimeout(() => {
     fn();
