@@ -2,10 +2,10 @@ let hourly = 0;
 let hrString = "hr";
 
 chrome.storage.local.get(
-  ["monthlyNetWage", "extensionActive"],
+  ["monthlyNetWage", "extensionActive", "workingHours"],
   async result => {
     if (result.monthlyNetWage > 0 && result.extensionActive === "true") {
-      hourly = await parseInt(result.monthlyNetWage / 160);
+      hourly = await parseInt(result.monthlyNetWage / (result.workingHours * 4));
       window.onload = function() {
         let href = window.location.href;
 
@@ -71,6 +71,9 @@ function manipulateAlza() {
     changeNormalPrice(item);
   });
 }
+
+// istyle updated their design
+// TODO
 
 // function manipulateIstyleEu() {
 //   // PRODUCT PAGE
