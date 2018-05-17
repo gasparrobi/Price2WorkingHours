@@ -11,9 +11,9 @@ body {
   padding: 20px;
   display: flex;
   flex-direction: column;
-  width: 250px;
-  height: 250px;
-  font-family: "Roboto" sans-serif;
+  width: 300px;
+  height: 350px;
+  font-family: "Roboto";
 }
 
 .main-title {
@@ -37,11 +37,14 @@ body {
 
 select {
   width: 50px;
+  height: 23px;
 }
 
 .title {
   margin-bottom: 5px;
   font-size: 11px;
+/*   color: #2e43ad; */
+  font-weight: 5ora00;
 }
 
 .huf {
