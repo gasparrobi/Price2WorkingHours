@@ -4,7 +4,7 @@ let hrString = "hr";
 chrome.storage.local.get(
   ["monthlyNetWage", "extensionActive"],
   async result => {
-    if (result.monthlyNetWage > 0 && result.extensionActive) {
+    if (result.monthlyNetWage > 0 && result.extensionActive === "true") {
       hourly = await parseInt(result.monthlyNetWage / 160);
       window.onload = function() {
         let href = window.location.href;
