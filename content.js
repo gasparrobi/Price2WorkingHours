@@ -4,7 +4,8 @@ let hrString = "hr";
 const sites = {
   "arukereso.hu": manipulateArukereso,
   "alza.hu": manipulateAlza,
-  "edigital.hu": manipulateEdigitalHu
+  "edigital.hu": manipulateEdigitalHu,
+  "220volt.hu": manipulate220volt
 };
 
 // get user data,
@@ -90,6 +91,11 @@ function manipulateEdigitalHu() {
 
   // MAIN PAGE AND OTHER LISTINGS
   let selectors = "span.price";
+  changeNormalPrice(selectors);
+}
+
+function manipulate220volt() {
+  let selectors = "span.price_small, div.price, span.price";
   changeNormalPrice(selectors);
 }
 

@@ -21,7 +21,9 @@
         "https://*.alza.hu/*",
         "http://*.alza.hu/*",
         "https://*.edigital.hu/*",
-        "http://*.edigital.hu/*"
+        "http://*.edigital.hu/*",
+        "http://*.220volt.hu/*",
+        "https://*.220volt.hu/*"
       ],
       "js": ["content.js"],
       "run_at": "document_idle"
