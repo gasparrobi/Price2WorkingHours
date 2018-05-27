@@ -5,7 +5,8 @@ const sites = {
   "arukereso.hu": manipulateArukereso,
   "alza.hu": manipulateAlza,
   "edigital.hu": manipulateEdigitalHu,
-  "220volt.hu": manipulate220volt
+  "220volt.hu": manipulate220volt,
+  "emag.hu": manipulateEmag
 };
 
 // get user data,
@@ -97,6 +98,24 @@ function manipulateEdigitalHu() {
 function manipulate220volt() {
   let selectors = "span.price_small, div.price, span.price";
   changeNormalPrice(selectors);
+}
+
+function manipulateEmag() {
+  let prices = document.querySelectorAll("span.money-int, p.product-new-price");
+
+  prices.forEach(item => {
+    let price = parseInt(
+      item.innerText
+        .split("Ft")
+        .join("")
+        .trim()
+        .split(".")
+        .join("")
+    );
+
+    let hour = parseFloat(price / hourly).toFixed(1);
+    displayPrice(item, hour);
+  });
 }
 
 // HELPER FUNCTIONS
