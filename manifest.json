@@ -23,7 +23,9 @@
         "https://*.edigital.hu/*",
         "http://*.edigital.hu/*",
         "http://*.220volt.hu/*",
-        "https://*.220volt.hu/*"
+        "https://*.220volt.hu/*",
+        "http://*.emag.hu/*",
+        "https://*.emag.hu/*"
       ],
       "js": ["content.js"],
       "run_at": "document_idle"

@@ -8,6 +8,7 @@ See displayed product prices in working hours - chrome extension - https://chrom
 * edigital.hu
 * alza.hu
 * 220volt.hu
+* emag.hu
 
 ---
 
