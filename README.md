@@ -4,11 +4,11 @@ See displayed product prices in working hours - chrome extension - https://chrom
 
 ### Supported sites
 
-* arukereso.hu
-* edigital.hu
-* alza.hu
-* 220volt.hu
-* emag.hu
+* [arukereso.hu](https://arukereso.hu)
+* [edigital.hu](https://edigital.hu)
+* [alza.hu](https://alza.hu)
+* [220volt.hu](https://220volt.hu)
+* [emag.hu](https://emag.hu)
 
 ---
 
