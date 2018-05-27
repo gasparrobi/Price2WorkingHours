@@ -133,8 +133,9 @@ function manipulateEdigitalHu() {
 
 // function for common price display usage, eg: '10000 Ft'
 function changeNormalPrice(item) {
+  let origText = item.innerText;
   let price = parseInt(
-    item.innerText
+    origText
       .split("Ft")
       .join("")
       .trim()
@@ -142,7 +143,7 @@ function changeNormalPrice(item) {
       .join("")
   );
   let hour = parseFloat(price / hourly).toFixed(1);
-  item.innerText = `${hour} ${hrString}`;
+  item.innerHTML = `${hour} ${hrString} <small>(${origText})</small>`;
 }
 
 // just a setTimeout wrapper
